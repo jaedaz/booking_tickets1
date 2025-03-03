@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sets</title>
+    <link rel="stylesheet" href="style.css" />
+
+
+
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            grid-gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .grid-item {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            border: 1px solid #999;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .grid:hover {
+            background-color: #bbb;
+        }
+
+        .seat.selected {
+            background-color: #6c3;
+            color: #fff;
+        }
+
+        .seat.booked {
+            background-color: red;
+            color: white;
+            pointer-events: none;
+        }
+
+
+        .seat {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #6c3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            button:hover {
+                background-color: #5a2;
+            }
+    </style>
+</head>
+<body>
+
+
+
+    <h1>Choose Your Seat</h1>
+    <div class="grid-container" id="sets">
+        <script language="javascript" type="text/javascript">
+            var seatPrice = 10.5;
+            var seats = document.getElementById("sets");
+            for (var i = 1; i <= 30; i++) {
+                var seat = document.createElement("div");
+                seat.className = "seat";
+                seat.textContent = i; 
+                seats.appendChild(seat);
+                seat.addEventListener("click", function () {
+                    if (this.style.backgroundColor === "green") {
+                        this.style.backgroundColor = "lightgray"; 
+                    } else {
+                        this.style.backgroundColor = "green"; 
+                    }
+                    updatePrice();
+                });
+
+            }
+
+
+            function updatePrice() {
+                var selectedSeats = document.querySelectorAll(".seat[style='background-color: green;']");
+                var totalPrice = selectedSeats.length * seatPrice;
+                document.getElementById("totalPrice").textContent = "Total Price: $" + totalPrice.toFixed(2);
+            }
+
+            function confirmBooking() {
+                var selectedSeats = [];
+                var allSeats = document.getElementsByClassName("seat");
+
+                for (var i = 0; i < allSeats.length; i++) {
+                    if (allSeats[i].style.backgroundColor === "green") {
+                        selectedSeats.push(allSeats[i].innerHTML); 
+                        allSeats[i].style.backgroundColor = "red";
+                        allSeats[i].classList.add("booked"); 
+                    }
+                }
+                
+                var totalPrice = selectedSeats.length * seatPrice;
+
+                if (selectedSeats.length === 0) {
+                    alert("You haven't selected any seats, please choose seats for booking!");
+                } else {
+                    alert("Seats booked: " + selectedSeats.join(", ") + "\nTotal Price: $" + totalPrice.toFixed(2));
+                }
+                updatePrice(); 
+                
+            }
+
+        </script>
+    </div>
+
+
+    <div class="selection-summary">
+        <p id="totalPrice">Total Price: $0</p> 
+        <button id="confirmBtn" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+
+
+</body>
+</html>

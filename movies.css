@@ -1,0 +1,95 @@
+﻿.container1 {
+    
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    height: 500px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+
+
+
+    .container1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 0;
+    }
+
+
+.movie-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1; 
+    padding: 20px;
+    color: #fff;
+}
+
+
+.movie-image {
+    width: 50%;
+    height: 80%;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+}
+
+
+.movie-details {
+    max-width: 500px;
+}
+
+
+.movie-title1 {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+
+.movie-rate, .movie-language, .movie-country, .movie-duration, .movie-genre, .movie-release {
+    font-size: 18px;
+    margin: 5px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+}
+
+
+.book-now {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #ff4b2b; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); 
+    z-index: 2; 
+    text-decoration: none; 
+    display: inline-block;
+    font-weight: bold; 
+    text-align: center; 
+}
+
+    
+    .book-now:hover {
+        background-color: #dc1717;
+    }
+
+  
+
+
+.checked {
+    color: orange;
+}

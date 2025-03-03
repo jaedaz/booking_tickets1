@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nav_footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>offers</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+ 
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .offer-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .offer {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 330px; 
+        }
+
+            .offer img {
+                width: 120px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 5px;
+               
+            }
+
+            .offer button {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 8px;
+            }
+
+        .movie-container {
+            display: grid;
+            gap: 12px;
+            justify-content: center;
+        }
+
+            .movie-container h2, .movie-container h3 {
+                margin-bottom: 6px;
+            }
+
+            .movie-container select {
+                padding: 7px;
+                margin-top: 6px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .movie-container img {
+                width: 180px;
+                height: 270px;
+                object-fit: cover;
+                margin-top: 12px;
+            }
+
+        .total-price {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button.confirm-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom:20px;
+        }
+    </style>
+        </head >
+<body>
+    <div class="navbar">
+        <div class="logo"> CinemaHub</div>
+        <a href="home.html"> Home</a>
+        <a href="aboutUs.html"> About us</a>
+        <a href="movie.html"> Movies</a>
+        <a href="contact.html"> Contact</a>
+        <a href="offers.html"> Offers </a>
+        <a href="question.html"> Other Questions</a>
+
+    </div>
+    <h1> Choose an Offer</h1>
+
+    <div class="offer-container">
+        <div class="offer" id="offer1">
+            <img src="offer/tpd.jpg" alt="Offer 1">
+            <p> One ticket with drink and popcorn - $15.99</p>
+            <button onclick="selectOffer('One ticket with drink and popcorn', 15.99)"> Select</button>
+        </div>
+
+        <div class="offer" id="offer2">
+            <img src="offer/tickets.jpg" alt="Offer 2">
+            <p> Two tickets - $23.00</p>
+            <button onclick="selectOffer('Two tickets', 23.00)"> Select</button>
+        </div>
+
+        <div class="offer" id="offer3">
+            <img src="offer/t2p.jpg" alt="Offer 3">
+            <p> Two tickets with popcor - $25.50</p>
+            <button onclick="selectOffer('Two tickets with popcor', 25.50)"> Select</button>
+        </div>
+
+        <div class="offer" id="offer4">
+            <img src="offer/t2dp.jpg" alt="Offer 4">
+            <p> Two tickets with a drink and popcorn - $27.00</p>
+            <button onclick="selectOffer('Two tickets with a drink and popcorn', 27.00)"> Select</button>
+        </div>
+    </div>
+
+    <div class="movie-container">
+        <h2> Choose a Movie</h2>
+
+        <select id="movie-select" onchange="changeMovieImage()">
+            <option value=""> -- Select Movie --</option>
+            <option value="Fictional1" data-src="movies/Fictional1.jpg"> Harry Potter</option>
+            <option value="Fictional2" data-src="movies/Fictional2.jpg"> King Kong</option>
+            <option value="cartoon3" data-src="movies/cartoon3.jpg"> Despicable Me 4</option>
+            <option value="action3" data-src="movies/action3.jpg"> Bad Boys 4</option>
+            <option value="action1" data-src="movies/action1.jpg"> Thelma</option>
+            <option value="cartoon1" data-src="movies/cartoon1.jpg"> Inside Out 2</option>
+            <option value="cartoon2" data-src="movies/cartoon2.jpg"> Moana 2</option>
+            <option value="action2" data-src="movies/action2.jpg"> Rebel Ridge</option>
+            <option value="Fictional3" data-src="movies/Fictiona3.jpg"> The Butterfly Effect</option>
+        </select>
+
+        <img id="movie-image" src="" alt="Select a movie" style="display:none;">
+
+        <h3> Select a Time</h3>
+        <select id="time-select">
+            <option value=""> -- Select Time --</option>
+            <option value="12:00 PM"> 12:00 PM</option>
+            <option value="15:00 PM"> 15:00 PM</option>
+            <option value="18:30 PM"> 18:30 PM</option>
+            <option value="21:00 PM"> 21:00 PM</option>
+        </select>
+    </div>
+
+    <div class="total-price" id="total-price"> Total Price: $0.00</div>
+
+    <button class="confirm-btn" onclick="confirmBooking()"> Confirm Booking</button>
+
+    <script>
+        var selectedOffer = '';
+        var offerPrice = 0;
+
+        function selectOffer(offerName, price) {
+            selectedOffer = offerName;
+            offerPrice = price;
+            document.getElementById('total-price').innerText = "Total Price: $" + offerPrice.toFixed(2);
+        }
+
+        function changeMovieImage() {
+            var movieSelect = document.getElementById('movie-select');
+            var selectedOption = movieSelect.options[movieSelect.selectedIndex];
+            var movieImage = document.getElementById('movie-image');
+
+            var imageSrc = selectedOption.getAttribute('data-src');
+            movieImage.src = imageSrc;
+            movieImage.style.display = 'block';  
+        }
+
+        function confirmBooking() {
+            var movie = document.getElementById('movie-select').value;
+            var time = document.getElementById('time-select').value;
+
+
+            if (!selectedOffer || !movie || !time) {
+                alert('Please select an offer, movie, and time.');
+                return;
+            }
+
+            alert("Thank you for purchasing for: \n" + selectedOffer + " Total Price: $" + offerPrice.toFixed(2));
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>For any inquiries, feel free to contact us:</p>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> contact@cinemahub.com</li>
+                    <li><a href="contact.html">contact Us</a> </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="question.html">Other Questions</a></li>
+                    <li><a href="offers.html">Discounts</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <marquee hspace="500" vspace="80" direction="right"> <p>2025 CinemaHub. All Rights Reserved.</p>
+</div>
+    </footer>
+</body>
+</html>

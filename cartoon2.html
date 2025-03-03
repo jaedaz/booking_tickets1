@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="movies.css" />
+
+</head>
+<body>
+    
+
+    <div bgcolor="black" class="container1" style="background-image: url(movies/moana.jpg);">
+        <div class="movie-info">
+            <img src="movies/cartoon2.jpg" alt="Movie Image" class="movie-image">
+            <div class="movie-details">
+                <h1 class="movie-title1">Moana 2</h1>
+                <div class="movie-rate">
+                    Rating:
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+                <label class="movie-language"> English , Hindi</label>
+                <label style="font-size:16px;" class="movie-duration">1h 40m . Cartoon . 2024</label>
+                <select id="booking-date" name="booking-date" class="booking-date-select" style="font-size:16px; padding:5px;">
+                    <option value="">--Select a date and Time--</option>
+                    <option value="2025-01-06">January 6, 2025 18:00</option>
+                    <option value="2025-01-07">January 7, 2025 20:00</option>
+                </select>
+                <a class="book-now" onclick="validateBooking()">Book Now </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateBooking() {
+            const bookingDate = document.getElementById('booking-date').value;
+
+            if (bookingDate === "") {
+                alert("Please select a booking date before proceeding.");
+            } else {
+                window.location.href = "sets.html";
+
+            }
+        }
+    </script>
+
+  
+
+    <div class="action3-container">
+
+        <iframe dir="ltr" width="70%" height="400" style="border:none;" srcdoc="
+        <h3 style='font-family:Aharoni; font-size:30px;'>About the movie</h3>
+        <p style='font-size: 18px; color: #434343; font-weight: normal; '>
+            Moana 2 (2024) is an eagerly anticipated animated sequel from Walt Disney Animation Studios.
+        The movie is set to be released on November 27, 2024, and continues the story of Moana and her loyal companion,
+        Maui, as they embark on a new voyage across the vast seas of Oceania. The film’s premiere will likely be a major event for fans of the original Moana (2016),
+        with music composed by Grammy-winning artists like Abigail Barlow, Emily Bear, Opetaia Foa‘i, and Mark Mancina, bringing fresh melodies to the adventure.
+        The premiere is expected to attract attention from Disney fans around the world,
+        featuring star-studded appearances and an exciting look at the next chapter in Moana's journey.
+         The film promises a deeper exploration of Moana's growth and challenges as she embraces her destiny as a wayfinder.
+        </p>">
+</iframe>
+
+
+    </div>
+
+ 
+</body>
+</html>

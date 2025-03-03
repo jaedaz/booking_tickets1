@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="nav_footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+            .form-container h1 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+
+        input[type="submit"] {
+            background-color: #4b3f3f;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #a78383;
+            }
+
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+            display: none;
+        }
+
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            textarea:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+
+
+        input[type="submit"]:focus {
+            outline: none;
+        }
+    </style>
+
+    <script>
+  
+
+        
+            function isValid(form) {
+                var errors = []; 
+
+            
+            if (form.name.value.length === 0 || form.phone.value.length === 0 ||
+            form.email.value.length === 0 || form.message.value.length === 0) {
+                errors.push("Please fill in all fields before submitting.");
+            }
+
+            if (form.name.value.length < 3) {
+                errors.push("Name must be at least 3 characters long.");
+            }
+
+            if (isNaN(form.phone.value)) {
+                errors.push("Phone number must contain only numbers.");
+            } else if (form.phone.value.length !== 10) {
+                errors.push("Phone number must be exactly 10 digits.");
+            }
+
+            if (!form.email.value.includes("@")) {
+                errors.push("Please enter a valid email address.");
+            } else if (!(form.email.value.endsWith("gmail.com") || form.email.value.endsWith("hotmail.com"))) {
+                errors.push("Email must be from gmail.com or hotmail.com.");
+            }
+
+            
+            if (errors.length > 0) {
+                alert(errors.join("\n")); 
+            return false;
+            }
+
+            return true; 
+        }
+    
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">CinemaHub</div>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About us</a>
+        <a href="movie.html">Movies</a>
+        <a href="contact.html">Contact</a>
+        <a href="offers.html">Offers </a>
+        <a href="question.html">Other Questions</a>
+       
+    </div>
+
+    <div class="form-container">
+        <h1>Contact Us</h1>
+        <form name="contact" id="contactForm" action="message.html" onSubmit="return isValid(contact);" >
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" >
+            
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" >
+            
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" >
+          
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+           
+
+            <input type="submit" value="Send Message">
+          
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>For any inquiries, feel free to contact us:</p>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> contact@cinemahub.com</li>
+                    <li><a href="contact.html">contact Us</a> </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    
+
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="question.html">Other Questions</a></li>
+                    <li><a href="offers.html">Discounts</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <marquee hspace="500" vspace="80" direction="right"> <p>2025 CinemaHub. All Rights Reserved.</p>
+</div>
+    </footer>
+
+</body>
+</html>

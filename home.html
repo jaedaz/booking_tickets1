@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="nav_footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        .welcome {
+            background-image: url('home/c.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid #ff5733;
+            display: inline-block;
+        }
+
+
+            .btn:hover {
+                background-color: white;
+                color: #ff5733;
+                transform: translateY(-5px);
+            }
+
+        
+        .featured-movies {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .featured-movies h2 {
+               
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+        .movies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .movies-table td {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .movies-table img {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+
+                .movies-table img:hover {
+                    transform: scale(1.05);
+                }
+
+            .movies-table a.btn1 {
+                background-color: #333;
+                color: white;
+                padding: 10px 20px;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+
+                .movies-table a.btn1:hover {
+                    background-color: #555;
+                }
+
+    </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">CinemaHub</div>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About us</a>
+        <a href="movie.html">Movies</a>
+        <a href="contact.html">Contact</a>
+        <a href="offers.html">Offers </a>
+        <a href="question.html">Other Questions</a>
+    </div>
+
+    <div class="welcome">
+        <div class="overlay">
+
+            <h1>
+                Welcome to <span class="logo" style=" font-size: 60px;font-weight: bold;
+        background: linear-gradient(to right, #ff6f61, #ff3d7f, #ff1e90);
+        background-clip: text;  color: transparent;font-family:sans-serif;
+        text-transform: uppercase;">CinemaHub</span>
+            </h1>
+            <p>Your ultimate destination for online movie tickets.</p>
+
+            <a href="movie.html" class="btn">Browse Movies</a>
+        </div>
+    </div>
+
+
+
+    <div class="featured-movies">
+        <h2>Recommended Movies</h2>
+        <table class="movies-table">
+            <tbody>
+                <tr>
+                    <td><img src="movies/action3.jpg" alt="Movie 1"></td>
+                    <td><img src="movies/cartoon2.jpg" alt="Movie 2"></td>
+                    <td><img src="movies/Fictional1.jpg" alt="Movie 3"></td>
+                </tr>
+                <tr>
+                    <td>Bad Boys 4</td>
+                    <td>Moana 2</td>
+                    <td>Harry Potter</td>
+                </tr>
+                <tr>
+                    <td><a href="action3.html" class="btn1">More Details</a></td>
+                    <td><a href="cartoon2.html" class="btn1">More Details</a></td>
+                    <td><a href="Fictional1.html" class="btn1">More Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>For any inquiries, feel free to contact us:</p>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> contact@cinemahub.com</li>
+                    <li><a href="contact.html">contact Us</a> </li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="question.html">Other Questions</a></li>
+                    <li><a href="offers.html">Discounts</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <marquee hspace="500" vspace="80" direction="right"> <p>2025 CinemaHub. All Rights Reserved.</p>
+</div>
+    </footer>
+</body>
+</html>

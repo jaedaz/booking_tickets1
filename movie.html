@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Page</title>
+    <link rel="stylesheet" href="nav_footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            color: white;
+            text-align: center;
+        }
+
+
+        .header {
+            flex: 0 0 50px;
+            color: white;
+            background-color: #342e2e;
+            font-size:18px;
+
+        }
+
+        .content-body {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            
+        }
+
+            .content-body .content {
+                flex: 6 6;
+                overflow: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                
+            }
+
+        #content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .content-body .sidenav {
+            flex: 1 1 100px;
+            overflow: auto;
+            background-color: #342e2e;
+        }
+
+        .sidenav ul {
+            list-style: none;
+        }
+
+            .sidenav ul li a {
+                padding: 10px;
+                font-size: 18px;
+                color: white;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 10px;
+                margin-right: 200px;
+            }
+
+        .content-body .ads {
+            flex: 1 1 100px;
+            overflow: auto;
+            background-color: #342e2e;
+        }
+       
+        
+        .allmovies {
+            display: flex;
+            flex-direction: column;
+        }
+
+       
+            .allmovies ul li a {
+                padding: 12px;
+                font-size: 18px;
+                color: white;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 15px;
+                border-radius: 5px;
+            }
+
+            .allmovies ul {
+                list-style: none;
+            }
+    </style>
+
+
+
+</head>
+<body>
+  
+    <div class="navbar">
+        <div class="logo">CinemaHub</div>
+        <a href="home.html">Home</a>
+        <a href="aboutUs.html">About us</a>
+        <a href="movie.html">Movies</a>
+        <a href="contact.html">Contact</a>
+        <a href="offers.html">Offers</a>
+        <a href="question.html">Other Questions</a>
+    </div>
+
+   
+    <div class="container">
+        <header class="header"><h3>Movie Categories</h3></header>
+        
+         <div class="content-body">
+        <aside class="sidenav">
+            <h1>Categories</h1>
+            <ul>
+                <li><a href="action.html" target="content-frame">Action</a></li>
+                <li><a href="fantasy.html" target="content-frame">Fantasy</a></li>
+                <li><a href="cartoon.html" target="content-frame">Cartoon</a></li>
+
+            </ul>
+        </aside>
+
+        <main class="content">
+
+            <iframe id="content-frame" name="content-frame" src="allMovies.html" frameborder="0"></iframe>
+        </main>
+
+
+        <aside class="ads">
+            <h2> <a style="text-decoration: none; color: white;" href="allMovies.html" target="content-frame"> All Movie</a></h2>
+            <aside class="allmovies">
+                <ul>
+                    <li><a href="action1.html" target="content-frame">Thelma</a></li>
+                    <li><a href="cartoon1.html" target="content-frame">Inside Out 2</a></li>
+                    <li><a href="cartoon3.html" target="content-frame">Despicable Me 4</a></li>
+                    <li><a href="Fictional1.html" target="content-frame">Harry Potter</a></li>
+                    <li><a href="action3.html" target="content-frame">bad boys 4</a></li>
+                    <li><a href="Fictional2.html" target="content-frame">King Kong</a></li>
+                    <li><a href="action2.html" target="content-frame">Rebel Ridge</a></li>
+                    <li><a href="cartoon2.html" target="content-frame">Moana 2</a></li>
+                    <li><a href="Fictional3.html" target="content-frame">The Butterfly Effect</a></li>
+
+
+                </ul>
+            </aside>
+
+        </aside>
+
+    </div>
+    </div>
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>For any inquiries, feel free to contact us:</p>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> contact@cinemahub.com</li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="question.html">Other Questions</a></li>
+                    <li><a href="offers.html">Discounts</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <marquee hspace="500" vspace="80" direction="right"> <p>2025 CinemaHub. All Rights Reserved.</p>
+</div>
+    </footer>
+</body>
+</html>
